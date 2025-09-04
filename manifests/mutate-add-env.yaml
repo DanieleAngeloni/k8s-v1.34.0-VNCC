@@ -1,0 +1,23 @@
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: MutatingAdmissionPolicy
+metadata:
+  name: add-env-production
+spec:
+  matchConstraints:
+    resourceRules:
+      - apiGroups: [""]
+        apiVersions: ["v1"]
+        operations: ["CREATE"]
+        resources: ["pods"]
+  mutations:
+    - op: add
+      path: "/spec/containers/0/env/-"
+      value: {"name":"LOG_LEVEL","value":"ERROR"}
+      matchCondition: "object.metadata.labels.env == 'production'"
+---
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: MutatingAdmissionPolicyBinding
+metadata:
+  name: add-env-binding
+spec:
+  policyName: add-env-production

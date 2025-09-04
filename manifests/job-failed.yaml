@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-failed
+spec:
+  completions: 1
+  podReplacementPolicy: Failed
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: demo
+        image: busybox
+        command: ["sh", "-c", "echo Pod running && sleep 30 && exit 1"]

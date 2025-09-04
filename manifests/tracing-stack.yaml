@@ -1,0 +1,109 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaeger
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jaeger
+  template:
+    metadata:
+      labels:
+        app: jaeger
+    spec:
+      containers:
+      - name: jaeger
+        image: jaegertracing/all-in-one:1.53
+        ports:
+        - containerPort: 16686  # UI Web
+        - containerPort: 14268  # Jaeger collector HTTP API
+        - containerPort: 4317   # OTLP gRPC
+        - containerPort: 4318   # OTLP HTTP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jaeger-query
+  namespace: monitoring
+spec:
+  selector:
+    app: jaeger
+  ports:
+  - name: query
+    port: 16686
+    targetPort: 16686
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otel-collector-config
+  namespace: monitoring
+data:
+  config.yaml: |
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+            endpoint: 0.0.0.0:4317
+          http:
+            endpoint: 0.0.0.0:4318
+    processors:
+      batch:
+    exporters:
+      otlphttp:
+        endpoint: http://jaeger.monitoring.svc.cluster.local:14268/api/traces
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlphttp]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel-collector
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: otel-collector
+  template:
+    metadata:
+      labels:
+        app: otel-collector
+    spec:
+      containers:
+      - name: otel-collector
+        image: otel/opentelemetry-collector-contrib:0.104.0
+        args: ["--config=/conf/config.yaml"]
+        ports:
+        - containerPort: 4317
+        - containerPort: 4318
+        volumeMounts:
+        - name: config
+          mountPath: /conf
+      volumes:
+      - name: config
+        configMap:
+          name: otel-collector-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: otel-collector
+  namespace: monitoring
+spec:
+  selector:
+    app: otel-collector
+  ports:
+  - name: otlp-grpc
+    port: 4317
+    targetPort: 4317
+  - name: otlp-http
+    port: 4318
+    targetPort: 4318

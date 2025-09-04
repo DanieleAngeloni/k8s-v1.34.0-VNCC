@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kyaml-example
+  labels:
+    app: kyaml-example
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["sh", "-c", "echo KYAML Example && sleep 3600"]

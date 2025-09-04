@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-vncc
+  namespace: default
+  labels:
+    app: pod-vncc
+spec:
+  hostname: test-vncc
+  subdomain: custom-vncc
+  containers:
+  - name: nginx
+    image: nginx:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: custom-vncc
+  namespace: default
+spec:
+  selector:
+    app: pod-vncc
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  clusterIP: None   # headless service
