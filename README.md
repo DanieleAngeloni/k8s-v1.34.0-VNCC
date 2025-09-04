@@ -32,7 +32,7 @@ Il cluster è stato realizzato su **due VM Lubuntu 25.04**:
 Per replicare il progetto servono:
 
 - **Macchine virtuali**
-  - 2 VM con **Lubuntu 24.04**  
+  - 2 VM con **Lubuntu 25.04**  
   - `node1` (master) con IP `192.168.43.10`  
   - `node2` (worker) con IP `192.168.43.11`  
   - Rete VirtualBox impostata come **NAT interna**
@@ -83,7 +83,7 @@ Per replicare il progetto servono:
 | Kubelet             | v1.34.0    |
 | Kubectl             | v1.34.0    |
 | Container runtime   | containerd 2.0.5 |
-| Etcd                | integrato v1.34.0 |
+| Etcd                | v3.6.4 |
 
 
 
