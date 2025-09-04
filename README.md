@@ -3,7 +3,7 @@
 ##  Introduzione
 Questo progetto documenta la creazione e gestione di un **cluster Kubernetes v1.34** e la dimostrazione pratica delle principali novità introdotte nell’ultima release (27 agosto 2025).  
 
-Il cluster è stato realizzato su **due VM Lubuntu 24.04**:
+Il cluster è stato realizzato su **due VM Lubuntu 25.04**:
 - **node1** → Master  
 - **node2** → Worker  
 
@@ -44,7 +44,7 @@ Per replicare il progetto servono:
 - **Pacchetti di sistema**
   - `openssh-server` (per accesso remoto e chiavi SSH)
   - `python3-pip`
-  - `apt-transport-https`, `ca-certificates`, `curl`, `gpg`  
+  
 
 - **Kubernetes 1.34**
   - Repository ufficiale:  
@@ -73,11 +73,18 @@ Per replicare il progetto servono:
     sudo sysctl -p
     ```
 
-- **Strumenti di gestione**
-  - `git`  
-  - `kubectl` configurato per l’utente non root (`~/.kube/config`)  
+  
+ ## Versioni utilizzate
 
-- **Accesso a DockerHub** (per immagini custom e fallback)  
+| Componente          | Versione   |
+|---------------------|------------|
+| Kubernetes (API)    | v1.34.0    |
+| Kubeadm             | v1.34.0    |
+| Kubelet             | v1.34.0    |
+| Kubectl             | v1.34.0    |
+| Container runtime   | containerd 2.0.5 |
+| Etcd                | integrato (versione non verificata con etcdctl) |
+
 
 
 ##  Struttura della Repository
