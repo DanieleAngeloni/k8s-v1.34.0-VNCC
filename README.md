@@ -1,18 +1,17 @@
-# k8s-v1.34.0-VNCC
-## 🚀 Kubernetes 1.34 – Feature della nuova release sperimentate in ambiente locale
+##  Kubernetes 1.34 – Feature della nuova release sperimentate in ambiente locale
 
-## 📌 Introduzione
+##  Introduzione
 Questo progetto documenta la creazione e gestione di un **cluster Kubernetes v1.34** e la dimostrazione pratica delle principali novità introdotte nell’ultima release (27 agosto 2025).  
 
 Il cluster è stato realizzato su **due VM Lubuntu 24.04**:
 - **node1** → Master  
 - **node2** → Worker  
 
-👉 Poiché **Kubespray** non supporta ancora la nuova versione, è stato usato **kubeadm** per l’installazione e la configurazione del cluster.
+ Poiché **Kubespray** non supporta ancora la nuova versione, è stato usato **kubeadm** per l’installazione e la configurazione del cluster.
 
 ---
 
-## 🎯 Obiettivi
+##  Obiettivi
 - Installare e configurare un cluster Kubernetes **v1.34**.  
 - Mostrare con esempi pratici le **nuove funzionalità della release**, tra cui:  
   - KYAML in `kubectl`  
@@ -28,7 +27,7 @@ Il cluster è stato realizzato su **due VM Lubuntu 24.04**:
 
 ---
 
-## 🖥️ Prerequisiti
+##  Prerequisiti
 
 Per replicare il progetto servono:
 
@@ -81,7 +80,7 @@ Per replicare il progetto servono:
 - **Accesso a DockerHub** (per immagini custom e fallback)  
 
 
-## 📂 Struttura della Repository
+##  Struttura della Repository
 
 ```text
 ├── manifests/                        # File YAML per tutte le demo di Kubernetes 1.34
