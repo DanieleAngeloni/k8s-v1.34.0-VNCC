@@ -83,7 +83,7 @@ Per replicare il progetto servono:
 | Kubelet             | v1.34.0    |
 | Kubectl             | v1.34.0    |
 | Container runtime   | containerd 2.0.5 |
-| Etcd                | integrato (versione non verificata con etcdctl) |
+| Etcd                | integrato v1.34.0 |
 
 
 
