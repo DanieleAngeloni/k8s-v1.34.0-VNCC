@@ -6,7 +6,9 @@ Questo progetto documenta la creazione e gestione di un **cluster Kubernetes v1.
 ## Documentazione completa
 La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponibile nel file:
 
-[`docs/manuale.pdf`](docs/manuale.pdf)
+[`docs/manuale.pdf`](docs/manualeProgettoVNCC.pdf)
+
+## Architettura
 
 <img src="img/architetturaVNCC.png" alt="Architettura cluster" width="600">
 
