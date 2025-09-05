@@ -1,4 +1,4 @@
-##  Kubernetes 1.34 – Features della nuova release sperimentate in ambiente locale
+##  Kubernetes 1.34 – Features della nuova release sperimentate in cluster locale
 
 ##  Introduzione
 Questo progetto documenta la creazione e gestione di un **cluster Kubernetes v1.34** e la dimostrazione pratica delle principali novità introdotte nell’ultima release (27 agosto 2025).  
