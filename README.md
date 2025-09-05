@@ -3,11 +3,18 @@
 ##  Introduzione
 Questo progetto documenta la creazione e gestione di un **cluster Kubernetes v1.34** e la dimostrazione pratica delle principali novità introdotte nell’ultima release (27 agosto 2025).  
 
-Il cluster è stato realizzato su **due VM Lubuntu 25.04**:
-- **node1** → Master  
-- **node2** → Worker  
+## Documentazione completa
+La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponibile nel file:
 
- Poiché **Kubespray** non supporta ancora la nuova versione, è stato usato **kubeadm** per l’installazione e la configurazione del cluster.
+[`docs/manuale.pdf`](docs/manuale.pdf)
+
+Il cluster è stato realizzato su **due Virtual Machines 'Lubuntu 25.04'**, connesse tra di loro e verso internet tramite la NAT Network di VirtualBox (kubernetes - 192.168.43.0/24):
+- **node1** → Master 
+- **node2** → Worker
+
+Per l’installazione del cluster Kubernetes v1.34 è stato scelto di utilizzare kubeadm. 
+Il tool kubespray, già visto a lezione, non supportava ancora ufficialmente la nuova release, causando errori nella fase di download dei pacchetti di sistema. 
+kubeadm, in quanto distribuzione ufficiale di Kubernetes, ha invece garantito la compatibilità immediata con la versione 1.34, anche se è stato necessario un approcio più manuale e meno automatizzato.
 
 ---
 
@@ -35,7 +42,7 @@ Per replicare il progetto servono:
   - 2 VM con **Lubuntu 25.04**  
   - `node1` (master) con IP `192.168.43.10`  
   - `node2` (worker) con IP `192.168.43.11`  
-  - Rete VirtualBox impostata come **NAT interna**
+  - Rete VirtualBox impostata come **Rete con Nat** (kubernetes - 192.168.43.0/24) che permette la connessione tra di loro e verso internet
 
 - **Configurazione di rete**
   - Modifica file `/etc/netplan/01-network-manager-all.yaml` per assegnare IP statici  
@@ -84,6 +91,7 @@ Per replicare il progetto servono:
 | Kubectl             | v1.34.0    |
 | Container runtime   | containerd 2.0.5 |
 | Etcd                | v3.6.4 |
+| VirtualBox          | v7.1.6 |
 
 
 
@@ -112,7 +120,7 @@ Per replicare il progetto servono:
 └── README.md                        # Guida introduttiva e indice delle demo
 ```
 
-## Indice delle Demo Kubernetes 1.34
+## Indice delle funzionalità presentate della nuova versione Kubernetes 1.34
 
 1. **Verifica cluster con Nginx + BusyBox**  
    - Deployment di test.  
