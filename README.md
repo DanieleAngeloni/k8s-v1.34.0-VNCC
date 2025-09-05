@@ -8,7 +8,8 @@ La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponib
 
 [`docs/manuale.pdf`](docs/manuale.pdf)
 
-![Architettura](img/architetturaVNCC.png)
+<img src="img/architetturaVNCC.png" alt="Architettura cluster" width="400">
+
 
 
 Il cluster è stato realizzato su **due Virtual Machines 'Lubuntu 25.04'**, connesse tra di loro e verso internet tramite la NAT Network di VirtualBox (kubernetes - 192.168.43.0/24):
