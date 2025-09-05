@@ -79,6 +79,8 @@ Il progetto è stato implementato nel seguente ambiente:
   - `containerd` come runtime predefinito  
   - Configurato con `containerd config default` in `/etc/containerd/config.toml`
 
+- **Plugin di rete: Calico**
+
 - **Impostazioni di sistema**
   - Swap disabilitato (`swapoff -a` e modifica `/etc/fstab`)  
   - Abilitazione **IP forwarding**:  
@@ -105,7 +107,7 @@ Il progetto è stato implementato nel seguente ambiente:
 ##  Struttura della Repository
 
 ```text
-├── manifests/                        # File YAML per tutte le demo di Kubernetes 1.34
+├── manifests/                           # File YAML per tutte le demo di Kubernetes 1.34
 │   ├── container-restart-rules.yaml     # Esempio di ContainerRestartRules
 │   ├── deviceclass.yaml                 # Dynamic Resource Allocation (DeviceClass)
 │   ├── fqdn-example.yaml                # FQDN personalizzato per Pod
@@ -122,12 +124,12 @@ Il progetto è stato implementato nel seguente ambiente:
 │   ├── service-topology.yaml            # Service Topology (PreferSameNode / SameZone)
 │   ├── test-cluster-nginx.yaml          # Deployment di test (Nginx + BusyBox)
 │   └── tracing-stack.yaml               # OpenTelemetry + Jaeger (Tracing stack)
-├── img/---                              # Immagini e screenshot delle demo
-├── docs/manualeProgettoVNCC.pdf     # Manuale completo (in PDF LaTeX)
-└── README.md                        # Guida introduttiva e indice delle demo
+├── img/imgX.png                         # Immagini e screenshot delle demo
+├── docs/manualeProgettoVNCC.pdf         # Manuale completo (in PDF LaTeX)
+└── README.md                            # Guida introduttiva e indice delle features
 ```
 
-## Indice delle funzionalità presentate della nuova versione Kubernetes 1.34
+## Indice delle features presentate della nuova versione Kubernetes 1.34
 
 1. **Verifica cluster con Nginx + BusyBox**  
    - Deployment di test.  
@@ -177,7 +179,7 @@ La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponib
 
 ---
 
-## 📚 Riferimenti
+## Riferimenti
 
 Durante la progettazione e la realizzazione del progetto sono state consultate le seguenti fonti:
 
