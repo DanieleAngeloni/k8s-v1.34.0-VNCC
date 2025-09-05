@@ -122,8 +122,8 @@ Per replicare il progetto servono:
 │   ├── service-topology.yaml            # Service Topology (PreferSameNode / SameZone)
 │   ├── test-cluster-nginx.yaml          # Deployment di test (Nginx + BusyBox)
 │   └── tracing-stack.yaml               # OpenTelemetry + Jaeger (Tracing stack)
-├── img/                             # Immagini e screenshot delle demo
-├── docs/                            # Manuale completo (in PDF LaTeX)
+├── img/---                              # Immagini e screenshot delle demo
+├── docs/manualeProgettoVNCC.pdf     # Manuale completo (in PDF LaTeX)
 └── README.md                        # Guida introduttiva e indice delle demo
 ```
 
