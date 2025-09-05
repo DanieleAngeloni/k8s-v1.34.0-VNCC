@@ -8,9 +8,13 @@ La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponib
 
 [`docs/manuale.pdf`](docs/manuale.pdf)
 
+![Architettura](img/architetturaVNCC.png)
+
+
 Il cluster è stato realizzato su **due Virtual Machines 'Lubuntu 25.04'**, connesse tra di loro e verso internet tramite la NAT Network di VirtualBox (kubernetes - 192.168.43.0/24):
 - **node1** → Master 
 - **node2** → Worker
+
 
 Per l’installazione del cluster Kubernetes v1.34 è stato scelto di utilizzare kubeadm. 
 Il tool kubespray, già visto a lezione, non supportava ancora ufficialmente la nuova release, causando errori nella fase di download dei pacchetti di sistema. 
