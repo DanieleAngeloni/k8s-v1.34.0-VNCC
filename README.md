@@ -6,7 +6,7 @@ Questo progetto documenta la creazione e gestione di un **cluster Kubernetes v1.
 ## Documentazione completa
 La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponibile nel file:
 
-[`docs/manuale.pdf`](docs/manualeProgettoVNCC.pdf)
+[`docs/manualeProgettoVNCC.pdf`](docs/manualeProgettoVNCC.pdf)
 
 ## Architettura
 
@@ -173,7 +173,19 @@ Per replicare il progetto servono:
 ## Documentazione completa
 La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponibile nel file:
 
-[`docs/manuale.pdf`](docs/manuale.pdf)
+[`docs/manualeProgettoVNCC.pdf`](docs/manualeProgettoVNCC.pdf)
+
+---
+
+## 📚 Riferimenti
+
+Durante la progettazione e la realizzazione del progetto sono state consultate le seguenti fonti:
+
+- [Hassanzadeh, S.D. – *Everything New in Kubernetes 1.34 with Examples*](https://medium.com/@hassanzadeh.sd/everything-new-in-kubernetes-1-34-with-examples-coming-august-27-2025-d4a96963c597)  
+- [Kubernetes Blog – *Kubernetes v1.34 Release Announcement* (27 agosto 2025)](https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/)  
+- [GitHub – *Kubespray issue #12510: Support for Kubernetes v1.34*](https://github.com/kubernetes-sigs/kubespray/issues/12510)  
+- [Cloudsmith – *Kubernetes 1.34: What You Need to Know*](https://cloudsmith.com/blog/kubernetes-1-34-what-you-need-to-know)  
+- [GitHub – *Repository ufficiale del progetto Kubernetes*](https://github.com/kubernetes/kubernetes)  
 
 ---
 
