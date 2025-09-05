@@ -4,7 +4,7 @@
 Questo progetto documenta la creazione e gestione di un **cluster Kubernetes v1.34** e la dimostrazione pratica delle principali novità introdotte nell’ultima release (27 agosto 2025).  
 
 ## Documentazione completa
-La guida dettagliata con tutti i comandi, file YAML e configurazioni è disponibile nel file:
+La guida dettagliata e completa con tutti i comandi, file YAML e configurazioni è disponibile nel file:
 
 [`docs/manualeProgettoVNCC.pdf`](docs/manualeProgettoVNCC.pdf)
 
