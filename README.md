@@ -43,7 +43,7 @@ kubeadm, in quanto distribuzione ufficiale di Kubernetes, ha invece garantito la
 
 ##  Prerequisiti
 
-Per replicare il progetto servono:
+Il progetto è stato implementato nel seguente ambiente:
 
 - **Macchine virtuali**
   - 2 VM con **Lubuntu 25.04**  
